@@ -90,7 +90,7 @@ The main files in this repository are:
 - **scoreboard.py**: Displays the player's score, level, and remaining ships.
 - **game_stats.py**: Tracks game statistics such as score and levels.
 - **button.py**: Manages button creation and drawing for the game interface.
-- **littleShip.py**: Displays a life indicator for the player in the top-right corner, reducing when hit by aliens.
+- **life_ship.py**: Displays a life indicator for the player in the top-right corner, reducing when hit by aliens.
 
 ## Technologies Used
 
