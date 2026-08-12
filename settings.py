@@ -1,4 +1,5 @@
 import pygame.image
+from paths import IMAGE_DIR
 
 
 class Settings:
@@ -7,7 +8,7 @@ class Settings:
         self.screen_height = 1080
         self.bg_color = 54, 69, 79
         self.game_name = "Aliens Shooting"
-        self.game_icon = pygame.image.load("icon.png")
+        self.game_icon = pygame.image.load(IMAGE_DIR / "icon.png")
 
         # Ship settings
         self.ship_limit = 3

@@ -1,5 +1,6 @@
 import pygame
 from pygame.sprite import Sprite
+from paths import IMAGE_DIR
 
 
 class Alien(Sprite):
@@ -9,7 +10,7 @@ class Alien(Sprite):
         self.screen = screen
         self.screen_rect = self.screen.get_rect()
 
-        self.image = pygame.image.load("alien.png")
+        self.image = pygame.image.load(IMAGE_DIR / "alien.png")
         self.rect = self.image.get_rect()
 
         self.x = float(self.rect.x)

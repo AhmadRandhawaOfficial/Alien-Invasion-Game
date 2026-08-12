@@ -1,5 +1,5 @@
 import pygame
-
+from paths import IMAGE_DIR
 
 class Ship():
     def __init__(self, ai_settings, screen):
@@ -8,7 +8,7 @@ class Ship():
         self.screen_rect = self.screen.get_rect()
 
         # Load the ship image and get its rect
-        self.image = pygame.image.load('ship.png')
+        self.image = pygame.image.load(IMAGE_DIR / 'ship.png')
         self.rect = self.image.get_rect()
 
         # Initial position
