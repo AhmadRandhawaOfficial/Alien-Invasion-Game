@@ -177,7 +177,7 @@ def check_aliens_bottom(ai_settings, screen, ship, bullets, aliens, stats, sb):
     for alien in aliens.sprites():
         if alien.rect.bottom >= screen_rect.bottom:
             ship_hit(ai_settings, screen, ship, bullets, aliens, stats, sb)  # Treat this as same as if the ship got hit
-
+            return
 
 def check_play_button(ai_settings, screen, ship, bullets, aliens, stats, play_button, mousex, mousey, sb):
     button_clicked = play_button.rect.collidepoint(mousex, mousey)  # Return True if any point collides with button rect
