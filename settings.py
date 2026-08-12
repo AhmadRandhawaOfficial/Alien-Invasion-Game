@@ -3,10 +3,10 @@ import pygame.image
 
 class Settings:
     def __init__(self):
-        self.screen_width = 1280
-        self.screen_height = 680
+        self.screen_width = 1920
+        self.screen_height = 1080
         self.bg_color = 54, 69, 79
-        self.game_name = "Alien Invasion"
+        self.game_name = "Aliens Shooting"
         self.game_icon = pygame.image.load("icon.png")
 
         # Ship settings
@@ -28,10 +28,10 @@ class Settings:
         self.initialize_dynamic_settings()
 
     def initialize_dynamic_settings(self):
-        self.ship_speed = 1.5
-        self.bullet_speed = 1
-        self.fleet_speed = 1
-        self.alien_points = 5
+        self.ship_speed = 2.5
+        self.bullet_speed = 2
+        self.fleet_speed = 2
+        self.alien_points = 6
 
     def increase_speed(self):
         self.ship_speed *= self.speedup_scale

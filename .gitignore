@@ -1,0 +1,132 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+.env
+.env.*
+
+# Packaging / distribution
+build/
+dist/
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+*.egg
+MANIFEST
+
+# Python tooling
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyre/
+.ruff_cache/
+.hypothesis/
+
+# IDEs / editors
+.vscode/
+.idea/
+*.iml
+*.suo
+*.user
+*.userossc
+*.sln.docstates
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# Pygame / game-generated files
+*.log
+logs/
+crash-reports/
+dumps/
+screenshots/
+recordings/
+
+# Save data / runtime state
+saves/
+savegames/
+*.save
+*.sav
+*.tmp
+*.bak
+
+# Local configuration / secrets
+.env
+.env.local
+.env.*.local
+*.local
+
+# Generated assets / caches
+cache/
+.cache/
+generated/
+generated-assets/
+*.cache
+
+# Build / release artifacts
+releases/
+artifacts/
+
+# Profiling / debugging
+*.prof
+*.profile
+.prof/
+.py-spy/
+
+# Jupyter / notebooks (if used during development)
+.ipynb_checkpoints/
+
+# Type checking / language servers
+.pyright/
+.pylance/
+
+# Coverage / test output
+coverage.xml
+coverage.json
+test-results/
+junit.xml
+
+# Dependency lock/temp files that should not be committed
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Secret/key/certificate files
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+
+# Local game data
+userdata/
+user_data/
+local_data/
+
+# Temporary files
+*.swp
+*.swo
+*~
+*.orig
+
+# Common Python project metadata
+.python-version
+.python-version.*
