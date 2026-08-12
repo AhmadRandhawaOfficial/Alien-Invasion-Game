@@ -4,13 +4,15 @@ from paths import IMAGE_DIR
 
 
 class Alien(Sprite):
+    image = pygame.image.load(IMAGE_DIR / "alien.png")
+
     def __init__(self, ai_settings, screen):
         super().__init__()
         self.ai_settings = ai_settings
         self.screen = screen
         self.screen_rect = self.screen.get_rect()
 
-        self.image = pygame.image.load(IMAGE_DIR / "alien.png")
+        self.image = Alien.image
         self.rect = self.image.get_rect()
 
         self.x = float(self.rect.x)
