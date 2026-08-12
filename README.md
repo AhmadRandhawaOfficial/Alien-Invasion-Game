@@ -1,121 +1,151 @@
-# Alien Invasion Game
+<div align="center">
 
-Welcome to **Alien Invasion**, a simple 2D space shooter game built using **Python** and **Pygame**. In this game, the player controls a spaceship to shoot and eliminate waves of alien invaders while avoiding collisions.
+# 👾 Alien Invasion
 
-## Table of Contents
-- [Game Description](#game-description)
-- [Features](#features)
-- [How to Play](#how-to-play)
-- [Installation](#installation)
-- [How to Run](#how-to-run)
-- [File Structure](#file-structure)
-- [Technologies Used](#technologies-used)
-- [Future Improvements](#future-improvements)
-- [Credits](#credits)
+**A classic arcade shooter, built from scratch in Python with Pygame.**
 
-## Game Description
+Four-directional movement. A wave-based fleet with edge-aware collision detection. A difficulty engine that compounds speed and score with every level cleared — all sitting on a modular, single-responsibility architecture.
 
-In **Alien Invasion**, players control a spaceship, moving it left, right, up, or down while firing bullets to shoot the incoming alien fleet. The game increases in difficulty as the player advances through levels, with aliens moving faster and becoming more challenging to eliminate.
+<p align="center">
+  <img alt="Python" src="https://img.shields.io/badge/Python-3.10+-3776AB?logo=python&logoColor=white">
+  <img alt="Pygame" src="https://img.shields.io/badge/Pygame-2.6.1-00b159?logo=pygame&logoColor=white">
+  <img alt="Engine" src="https://img.shields.io/badge/Backend-SDL2-informational">
+  <img alt="License" src="https://img.shields.io/badge/License-MIT-yellow.svg">
+  <img alt="PRs Welcome" src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg">
+</p>
 
----
-
-# Project Preview
-
-## Start Game
-
-![Start game](docs/screenshots/start_game.png)
+</div>
 
 ---
 
-## Play Game
+## 🎬 See it in action
 
-![Play game](docs/screenshots/play_game.png)
+https://github.com/user-attachments/assets/3e16a161-4ef5-4315-9f37-ef64dac5b663
 
----
-
-## Start Again
-
-![Start again](docs/screenshots/start_again.png)
+*A full run: fleet spawn → four-directional dodging → wave clear → difficulty spike → ship loss → game over screen.*
 
 ---
 
+## 📑 Table of Contents
 
-## Features
+- [Overview](#-overview)
+- [Features](#-features)
+- [Controls](#️-controls)
+- [Architecture](#️-architecture)
+- [Installation](#️-installation)
+- [Roadmap](#️-roadmap)
+- [Contributing](#-contributing)
+- [License](#-license)
 
-- **Dynamic gameplay**: The game's speed increases after each level, making it progressively harder.
-- **Scoring system**: Keep track of your score, high score, and level progression.
-- **Lives system**: You start with 3 lives (ships), and the game ends when all are lost.
-- **Graphical effects**: Simple 2D sprites and graphics enhance the gaming experience.
-- **Responsive controls**: Control the ship with arrow keys and shoot with the space bar.
+## 📖 Overview
 
-## How to Play
+**Alien Invasion** is a top-down arcade shooter inspired by the classic Space Invaders formula, reimagined with a fully object-oriented architecture and a scaling difficulty curve. Pilot your ship, hold the alien fleet back, and survive as the game gets progressively faster and more punishing with every wave you clear.
 
-1. Use the **arrow keys** to move the spaceship.
-2. Press the **spacebar** to shoot bullets.
-3. Destroy all the aliens before they reach the bottom of the screen.
-4. Avoid getting hit by the aliens or letting them touch the bottom, or you will lose a life.
-5. Earn points for every alien destroyed, and advance to the next level after clearing all aliens.
+This project was built as a deep dive into **game loop architecture, real-time input handling, collision systems, and state management** — the same fundamentals that show up in simulations, real-time systems, and interactive applications far beyond games.
 
-## Installation
+## ✨ Features
 
-To install and play the game, ensure you have **Python** installed and follow these steps:
+- 🎮 Full four-directional ship movement (not just the classic left–right lane)
+- 🚀 Real-time shooting with a configurable bullet cap
+- 👽 Dynamic alien fleet with automatic edge detection and direction reversal
+- 📈 Progressive difficulty — speed and score-per-kill compound after every cleared wave
+- ❤️ Lives system with visual ship-life indicators
+- 🏆 Live scoreboard with in-session high-score tracking
+- 🖱️ Interactive Start/Restart flow
 
-1. Clone the repository from GitHub:
+## 🕹️ Controls
 
-   ```bash
-   git clone https://github.com/AhmadRandhawaOfficial/AlienInvasion.git
-   
-2. Install the required dependencies using pip:
-   ````bash
-   pip install pygame
-   
-## How to Run
-1. After installation, navigate to the game directory:
+| Key            | Action                |
+|----------------|------------------------|
+| `↑ ↓ ← →`      | Move the ship          |
+| `Space`        | Fire bullet             |
+| `Esc`          | Quit game               |
+| `Mouse Click`  | Start / Restart game    |
 
-   ```bash
-   cd AlienInvasion
+## 🏗️ Architecture
 
-2. Run the main game file:
-   ````bash
-   python main.py
-## File Structure
-The main files in this repository are:
+```
+main.py               # Entry point — owns the game loop, wires everything together
+settings.py           # All tunable constants: speed, size, colors, difficulty curve
+game_functions.py     # Game logic layer — input handling, collisions, fleet & difficulty rules
+game_stats.py         # Tracks score, level, lives, high score
+scoreboard.py         # Renders score/level/lives/high-score to screen
+paths.py              # Working-directory-independent asset resolution
 
-- **main.py**: The entry point to the game, containing the game loop and control structure.
-- **settings.py**: Handles all the game settings like screen size, speed adjustments, and colors.
-- **ship.py**: Contains the ship (player) class for movement and collision detection.
-- **alien.py**: Manages alien behavior, movement, and collisions.
-- **bullet.py**: Handles bullet behavior and interactions.
-- **game_functions.py**: Manages game events, updates, and interactions between objects.
-- **scoreboard.py**: Displays the player's score, level, and remaining ships.
-- **game_stats.py**: Tracks game statistics such as score and levels.
-- **button.py**: Manages button creation and drawing for the game interface.
-- **life_ship.py**: Displays a life indicator for the player in the top-right corner, reducing when hit by aliens.
+ship.py               # Player entity
+alien.py              # Alien entity
+bullet.py             # Bullet entity
+life_ship.py          # Ship-life indicator icon
+button.py             # Interactive Start/Restart button
 
-## Technologies Used
+assets/images/        # Sprites and game icon
+```
 
-- **Python**: Core programming language.
-- **Pygame**: Library used for handling graphics, input, and game mechanics.
+## ⚙️ Installation
 
-## Future Plans
+**1. Clone the repository**
 
-- **Power-ups**: Add power-ups like shields or multi-shot capabilities.
-- **New enemy types**: Introduce more challenging enemies with different abilities.
-- **Multiplayer mode**: Enable two-player mode with split screen or network play.
+```bash
+git clone https://github.com/AhmadRandhawaOfficial/Alien-Invasion-Game.git
+cd Alien-Invasion-Game
+```
+
+**2. System dependencies (Linux only)**
+
+Pygame's SDL2 backend needs a few system libraries to build/run on Debian/Ubuntu-based systems:
+
+```bash
+sudo apt install build-essential python3-dev \
+    libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libsdl2-ttf-dev \
+    libfreetype6-dev pkg-config
+```
+
+> macOS/Windows users can typically skip this step — Pygame ships prebuilt wheels for these platforms.
+
+**3. Set up a virtual environment**
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate      # Windows: .venv\Scripts\activate
+```
+
+**4. Install dependencies and run**
+
+```bash
+pip install -r requirements.txt
+python main.py
+```
+
+## 🗺️ Roadmap
+
+- [ ] Sound effects and background music
+- [ ] Persistent high-score storage across sessions
+- [ ] Difficulty presets (Easy / Normal / Hard)
+- [ ] Power-ups (shield, rapid fire, multi-shot)
+- [ ] Pause menu
+- [ ] Unit tests for collision and scoring logic
+- [ ] Packaged executable builds (PyInstaller)
+
+Have an idea not listed here? Open an issue — see [Contributing](#-contributing).
+
+## 🤝 Contributing
+
+Contributions are welcome — bug fixes, roadmap features, or documentation improvements. Please read [`CONTRIBUTING.md`](CONTRIBUTING.md) before opening a pull request. New to the codebase? `game_functions.py` is the best entry point — nearly every game rule lives there.
+
+## 📜 License
+
+Licensed under the **MIT License** — see [`LICENSE`](LICENSE) for details.
+
+## 💬 Acknowledgement 
  
-
-# License
-
-MIT License
-
+Built on the Alien Invasion project from **[*Python Crash Course*](https://ehmatthes.github.io/pcc/) by Eric Matthes** — extended with four-directional movement, portable asset paths, and centralized difficulty scaling.
+ 
 ---
 
-# Contact 💀 
+<div align="center">
 
-[<img src="https://img.icons8.com/3d-fluency/30/secured-letter.png" alt="Email" style="vertical-align: middle;"/> official.ahmadrandhawa@gmail.com](mailto:official.ahmadrandhawa@gmail.com)   
-[<img src="https://icon.icepanel.io/Technology/svg/LinkedIn.svg" width="26" alt="LinkedIn"/>  LinkedIn Profile](https://www.linkedin.com/in/ahmad-hussain-randhawa/)  
-[<img src="https://icon.icepanel.io/Technology/svg/GitHub.svg" width="26" alt="GitHub"/>  GitHub Profile](https://github.com/AhmadHussainRandhawa)   
+Built by **[Ahmad Hussain](https://github.com/AhmadRandhawaOfficial)**
 
----
+If this project helped you learn something or you just enjoyed playing it, consider leaving a ⭐
 
-> *"If you have any questions or want to collaborate on something, feel free to email me (without any hesitation)... I might be a little busy sometimes, but I’ll definitely reply."*
+</div>
