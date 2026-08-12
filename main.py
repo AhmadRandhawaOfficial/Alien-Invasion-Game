@@ -10,6 +10,7 @@ from scoreboard import Scoreboard
 
 def run_game():
     pygame.init()
+    clock = pygame.time.Clock()
     ai_settings = Settings()
     screen = pygame.display.set_mode((ai_settings.screen_width, ai_settings.screen_height))  # It is a surface.
     pygame.display.set_icon(ai_settings.game_icon)
@@ -30,6 +31,7 @@ def run_game():
             gf.update_bullets(ai_settings, screen, ship, bullets, aliens, stats, sb)
             gf.update_aliens(ai_settings, screen, ship, bullets, aliens, stats, sb)
         gf.update_screen(ai_settings, screen, ship, bullets, aliens, stats, play_button, sb)  # Used for drawing.
+        clock.tick(60)
 
 
 run_game()
