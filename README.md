@@ -86,8 +86,8 @@ assets/images/        # Sprites and game icon
 **1. Clone the repository**
 
 ```bash
-git clone https://github.com/AhmadRandhawaOfficial/Alien-Invasion-Game.git
-cd Alien-Invasion-Game
+git clone git@github.com:AhmadHussainRandhawa/alien-invasion.git
+cd alien-invasion
 ```
 
 **2. System dependencies (Linux only)**
