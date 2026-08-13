@@ -28,14 +28,14 @@ Be respectful, be constructive, assume good faith. Disagreements on technical ap
 1. **Fork** the repository and clone your fork:
 
    ```bash
-   git clone https://github.com/<your-username>/Alien-Invasion-Game.git
+   git clone git@github.com:AhmadHussainRandhawa/alien-invasion.git
    cd Alien-Invasion-Game
    ```
 
 2. **Add the upstream remote** so you can stay in sync:
 
    ```bash
-   git remote add upstream https://github.com/AhmadRandhawaOfficial/Alien-Invasion-Game.git
+   git remote add upstream git@github.com:AhmadHussainRandhawa/alien-invasion.git
    ```
 
 3. **Set up your environment** — follow the [Installation](README.md#️-installation) section in the README (system dependencies, virtual environment, `pip install -r requirements.txt`).
